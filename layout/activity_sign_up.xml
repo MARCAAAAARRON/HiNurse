@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="24dp"
+        android:gravity="center">
+
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="24dp"
+            app:cardElevation="8dp"
+            app:cardBackgroundColor="@color/background_light"
+            app:strokeColor="@color/purple"
+            app:strokeWidth="2dp"
+            android:layout_marginBottom="24dp"
+            android:layout_marginTop="40dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="24dp"
+                android:gravity="center">
+
+                <!-- Logo -->
+                <ImageView
+                    android:layout_width="120dp"
+                    android:layout_height="120dp"
+                    android:layout_gravity="center"
+                    android:layout_marginBottom="15dp"
+                    android:contentDescription="HiNurse Logo"
+                    android:src="@drawable/logo" />
+
+                <!-- Tagline -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:fontFamily="@font/poppins"
+                    android:text="Campus Health Assistant"
+                    android:textColor="@color/blue"
+                    android:textSize="16sp"
+                    android:layout_marginBottom="15dp" />
+
+                <!-- Title -->
+
+                <!-- Input Fields -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginBottom="24dp"
+                    android:fontFamily="@font/poppins_bold2"
+                    android:text="SignUp"
+                    android:textColor="@color/purple"
+                    android:textSize="24sp" />
+
+                <EditText
+                    android:id="@+id/editTextFirstName"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="First Name"
+                    android:background="@drawable/edit_text_border2"
+                    android:fontFamily="@font/poppins"
+                    android:padding="12dp"
+                    android:textColor="@color/blue"
+                    android:textColorHint="@color/purple"
+                    android:textSize="16sp"
+                    android:layout_marginBottom="16dp" />
+
+                <EditText
+                    android:id="@+id/editTextLastName"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Last Name"
+                    android:background="@drawable/edit_text_border2"
+                    android:fontFamily="@font/poppins"
+                    android:padding="12dp"
+                    android:textColor="@color/blue"
+                    android:textColorHint="@color/purple"
+                    android:textSize="16sp"
+                    android:layout_marginBottom="16dp" />
+
+                <EditText
+                    android:id="@+id/editTextEmail"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Email"
+                    android:inputType="textEmailAddress"
+                    android:background="@drawable/edit_text_border2"
+                    android:fontFamily="@font/poppins"
+                    android:padding="12dp"
+                    android:textColor="@color/blue"
+                    android:textColorHint="@color/purple"
+                    android:textSize="16sp"
+                    android:layout_marginBottom="16dp" />
+
+                <EditText
+                    android:id="@+id/editTextPassword"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Password"
+                    android:inputType="textPassword"
+                    android:background="@drawable/edit_text_border2"
+                    android:fontFamily="@font/poppins"
+                    android:padding="12dp"
+                    android:textColor="@color/blue"
+                    android:textColorHint="@color/purple"
+                    android:textSize="16sp"
+                    android:layout_marginBottom="16dp" />
+
+                <EditText
+                    android:id="@+id/editTextConfirmPassword"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Confirm Password"
+                    android:inputType="textPassword"
+                    android:background="@drawable/edit_text_border2"
+                    android:fontFamily="@font/poppins"
+                    android:padding="12dp"
+                    android:textColor="@color/blue"
+                    android:textColorHint="@color/purple"
+                    android:textSize="16sp"
+                    android:layout_marginBottom="24dp" />
+
+                <!-- Buttons -->
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/buttonSignUp"
+                    android:layout_width="match_parent"
+                    android:layout_height="56dp"
+                    android:text="Create Account"
+                    android:textColor="@android:color/white"
+                    android:textSize="16sp"
+                    android:fontFamily="@font/poppins_bold2"
+                    android:background="@drawable/button_shape"
+                    app:backgroundTint="@color/purple"
+                    android:layout_marginBottom="16dp"
+                    android:stateListAnimator="@null"
+                    android:elevation="0dp" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/buttonBackToSignIn"
+                    android:layout_width="match_parent"
+                    android:layout_height="56dp"
+                    android:text="Already have an account? Sign In"
+                    android:textColor="@color/purple"
+                    android:textSize="16sp"
+                    android:fontFamily="@font/poppins_bold2"
+                    android:background="@android:color/transparent"
+                    android:layout_marginBottom="16dp"
+                    android:stateListAnimator="@null"
+                    android:elevation="0dp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="or"
+                    android:textColor="@color/blue"
+                    android:layout_gravity="center"
+                    android:layout_marginBottom="16dp"
+                    android:fontFamily="@font/poppins" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/buttonGoogleSignUp"
+                    android:layout_width="match_parent"
+                    android:layout_height="56dp"
+                    android:text="Sign up with Google"
+                    android:textColor="@android:color/white"
+                    android:textSize="16sp"
+                    android:fontFamily="@font/poppins_bold2"
+                    android:background="@drawable/button_shape"
+                    app:backgroundTint="@color/purple"
+                    android:drawableStart="@drawable/ic_google"
+                    android:drawablePadding="8dp"
+                    android:layout_marginBottom="8dp"
+                    android:stateListAnimator="@null"
+                    android:elevation="0dp" />
+
+                <ProgressBar
+                    android:id="@+id/progressBar"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:visibility="gone"
+                    android:indeterminateTint="@color/purple" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="By creating an account, you agree to our Terms of Service and Privacy Policy"
+                    android:textSize="12sp"
+                    android:textColor="@color/blue"
+                    android:gravity="center"
+                    android:layout_marginTop="16dp"
+                    android:fontFamily="@font/poppins" />
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+    </LinearLayout>
+</ScrollView>

@@ -1,0 +1,342 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@drawable/background">
+
+    <!-- Header (matches health tips style) -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="24dp"
+        android:background="@android:color/transparent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:layout_marginBottom="12dp">
+
+            <ImageButton
+                android:id="@+id/buttonBack"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:src="@android:drawable/ic_menu_revert"
+                app:tint="@color/white"
+                android:contentDescription="Back"
+                android:layout_marginEnd="12dp" />
+
+            <TextView
+                android:id="@+id/textViewHeaderTitle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:fontFamily="@font/poppins_bold2"
+                android:text="Nurse Clara"
+                android:textColor="@color/white"
+                android:textAppearance="@style/TextAppearance.HiNurse.Headline2" />
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/textViewPrompt"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Chat with Nurse Clara for instant health assessment and recommendations"
+            android:textAppearance="@style/TextAppearance.HiNurse.Body1"
+            android:textColor="@color/white"
+            android:background="@drawable/button_shape2"
+            android:padding="12dp"
+            android:gravity="center"
+            android:layout_marginBottom="8dp" />
+
+    </LinearLayout>
+
+    <!-- Main Content -->
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingLeft="24dp"
+            android:paddingRight="24dp"
+            android:paddingBottom="24dp"
+            android:paddingTop="8dp">
+
+            <!-- Symptoms Card -->
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cardCornerRadius="24dp"
+                app:cardElevation="4dp"
+                app:cardUseCompatPadding="true"
+                app:cardPreventCornerOverlap="true"
+                app:cardBackgroundColor="@android:color/transparent"
+                app:contentPadding="0dp"
+                android:layout_marginBottom="16dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="16dp"
+                    android:background="@drawable/edit_text_border2">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="12dp"
+                        android:text="Describe Your Symptoms"
+                        android:textAppearance="@style/TextAppearance.HiNurse.CardTitle"
+                        android:textColor="@color/purple" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:layout_marginBottom="12dp">
+
+                        <AutoCompleteTextView
+                            android:id="@+id/autoCompleteSymptoms"
+                            android:layout_width="0dp"
+                            android:layout_height="64dp"
+                            android:layout_weight="1"
+                            android:layout_marginEnd="8dp"
+                            android:background="@drawable/edit_text_background"
+                            android:hint="Enter symptom..."
+                            android:padding="16dp" />
+
+                        <Button
+                            android:id="@+id/buttonAddSymptom"
+                            android:layout_width="wrap_content"
+                            android:layout_height="48dp"
+                            android:background="@drawable/button_shape2"
+                            app:backgroundTint="@color/purple"
+                            android:minWidth="80dp"
+                            android:text="Add"
+                            android:textColor="@color/white" />
+
+                    </LinearLayout>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Selected Symptoms"
+                        android:textAppearance="@style/TextAppearance.HiNurse.Body1"
+                        android:textColor="@color/purple"
+                        android:layout_marginBottom="8dp" />
+
+                    <LinearLayout
+                        android:id="@+id/layoutSymptomsList"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:layout_marginBottom="16dp" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:gravity="center_vertical"
+                        android:layout_marginBottom="12dp">
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="AI enhancements (beta)"
+                            android:textAppearance="@style/TextAppearance.HiNurse.Body1"
+                            android:textColor="@color/purple" />
+
+                        <Switch
+                            android:id="@+id/switchAiEnhancements"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:layout_marginBottom="12dp">
+
+                        <Button
+                            android:id="@+id/buttonReset"
+                            android:layout_width="0dp"
+                            android:layout_height="56dp"
+                            android:layout_weight="1"
+                            android:layout_marginEnd="8dp"
+                            android:text="🔄 Reset"
+                            android:textSize="16sp"
+                            android:textColor="@color/white"
+                            android:background="@drawable/button_shape2"
+                            app:backgroundTint="@color/purple"
+                            android:layout_marginBottom="0dp" />
+
+                        <Button
+                            android:id="@+id/buttonAnalyze"
+                            android:layout_width="0dp"
+                            android:layout_height="56dp"
+                            android:layout_weight="2"
+                            android:text="🔍 Analyze Symptoms"
+                            android:textSize="16sp"
+                            android:textColor="@color/white"
+                            android:background="@drawable/button_shape2"
+                            app:backgroundTint="@color/purple" />
+
+                    </LinearLayout>
+
+                    <ProgressBar
+                        android:id="@+id/progressBar"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:visibility="gone" />
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <!-- Analysis Results Card -->
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cardCornerRadius="24dp"
+                app:cardElevation="4dp"
+                app:cardUseCompatPadding="true"
+                app:cardPreventCornerOverlap="true"
+                app:cardBackgroundColor="@android:color/transparent"
+                app:contentPadding="0dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="16dp"
+                    android:background="@drawable/edit_text_border2"
+                    android:visibility="visible">
+
+                    <LinearLayout
+                        android:id="@+id/layoutAnalysisResults"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:visibility="gone">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="AI Analysis Results"
+                            android:textAppearance="@style/TextAppearance.HiNurse.CardTitle"
+                            android:textColor="@color/purple"
+                            android:layout_marginBottom="12dp" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Analysis Summary"
+                            android:textAppearance="@style/TextAppearance.HiNurse.Body1"
+                            android:textColor="@color/purple"
+                            android:layout_marginBottom="8dp" />
+
+                        <TextView
+                            android:id="@+id/textViewAnalysis"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Analysis results will appear here..."
+                            android:textSize="14sp"
+                            android:textColor="@color/blue"
+                            android:background="@color/light_gray"
+                            android:padding="16dp"
+                            android:layout_marginBottom="16dp" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Recommendation"
+                            android:textAppearance="@style/TextAppearance.HiNurse.Body1"
+                            android:textColor="@color/purple"
+                            android:layout_marginBottom="8dp" />
+
+                        <TextView
+                            android:id="@+id/textViewRecommendation"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Recommendation will appear here..."
+                            android:textSize="14sp"
+                            android:textColor="@color/blue"
+                            android:background="@color/light_gray"
+                            android:padding="16dp"
+                            android:layout_marginBottom="16dp" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Self-Care Tips"
+                            android:textAppearance="@style/TextAppearance.HiNurse.Body1"
+                            android:textColor="@color/purple"
+                            android:layout_marginBottom="8dp" />
+
+                        <TextView
+                            android:id="@+id/textViewSelfCareTips"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Self-care tips will appear here..."
+                            android:textSize="14sp"
+                            android:textColor="@color/blue"
+                            android:background="@color/light_gray"
+                            android:padding="16dp"
+                            android:layout_marginBottom="16dp" />
+
+                        <TextView
+                            android:id="@+id/textViewDisclaimer"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="⚠️ AI Recommendation Notice:\nThis is an AI-generated recommendation based on your symptoms. Please consult with a medical professional for accurate diagnosis and treatment."
+                            android:textSize="12sp"
+                            android:textColor="@color/white"
+                            android:background="#FFA500"
+                            android:padding="16dp"
+                            android:layout_marginBottom="16dp"
+                            android:visibility="gone" />
+
+                        <Button
+                            android:id="@+id/buttonBookAppointment"
+                            android:layout_width="match_parent"
+                            android:layout_height="56dp"
+                            android:text="📅 Book Appointment"
+                            android:textSize="16sp"
+                            android:textColor="@color/white"
+                            android:background="@drawable/button_shape2"
+                            app:backgroundTint="@color/purple"
+                            android:visibility="gone" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <ImageView
+                android:layout_width="268dp"
+                android:layout_height="120dp"
+                android:layout_marginEnd="12dp"
+                android:contentDescription="Nurse Clara Mascot"
+                android:scaleType="fitCenter"
+                android:src="@drawable/nurseclara" />
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</LinearLayout>
