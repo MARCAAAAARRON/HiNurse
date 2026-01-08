@@ -54,25 +54,6 @@ HiNurse is a thoughtfully crafted Android app designed to streamline campus clin
 - Firebase project setup
 - Android device or emulator (API 29+)
 
-### Setup Instructions
-
-1. **Clone the repository**
-   ```bash
-   git clone <repository-url>
-   cd HiNurse20
-   ```
-
-2. **Firebase Configuration**
-   - Create a Firebase project at [Firebase Console](https://console.firebase.google.com)
-   - Enable Authentication and Firestore Database
-   - Download `google-services.json` and place it in the `app/` directory
-   - Configure Authentication to allow email/password sign-in
-
-3. **Build and Run**
-   ```bash
-   ./gradlew assembleDebug
-   ```
-
 ### Firebase Setup Details
 
 1. **Authentication**
